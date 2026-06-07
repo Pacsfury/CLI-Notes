@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "vector.h"
 
 void vec_init(Vector *v) {
@@ -16,8 +17,16 @@ void vec_push(Vector *v, char *value) {
     v->data[v->size++] = value;
 }
 
+char *vec_get(Vector *v, int index) {
+    if (index >= 0 && index < v->size) {
+        return v->data[index];
+    }
+    return NULL;
+}
+
 void vec_replace(Vector *v, int index, char *value) { 
     if (index >= 0 && index < v->size) {
+        free(v->data[index]);
         v->data[index] = value;
     }
 }
@@ -27,4 +36,17 @@ void vec_free(Vector *v) {
     v->data = NULL;
     v->size = 0;
     v->capacity = 0;
+}
+
+int vec_where(Vector *v, char *value) {
+    if (v == NULL || value == NULL) {
+        return -1;
+    }
+    
+    for (int i = 0; i < v->size; i++) {
+        if (strcmp(v->data[i], value) == 0) {
+            return i;
+        }
+    }
+    return -1;
 }
