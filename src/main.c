@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include "../include/style.h"
 #include "../include/status.h"
-#include "../include/CMDanalizer.h"
+#include "../include/argc.h"
 
-int main() {
-    logSuccess("Welcome to temporary notes.");
-    printf("Write '/help' to receive a list of commands\n>> ");
-    char cmd[64] = "Welcome";
-    analizeCMD(cmd);
+int main(int argc , char *argv[]) {
+         
+    ARGS_CONTEX ctx = { argc, argv };
+    args_init(&ctx, argc, argv);
+
+    if (hasArg(&ctx, "new")) {
+        newNote(getArg(&ctx, "--title"));
+    }
     
     return 0;
 }
