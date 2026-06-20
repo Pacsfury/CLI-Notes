@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "vector.h"
+#include "../include/vector.h"
 #include "../include/noteManager.h"
 
 Vector titles;
@@ -32,6 +32,22 @@ void openNote(char title[]) {
     printf("Title: %s\n", noteTitle);
     printf("Content: %s\n", noteContent);
 }
+
+void editNote(char title[], char cont[]) {
+    int index = vec_where(&titles, title);
+    
+    if (index == -1) {
+        printf("Error: Note '%s' not found.\n", title);
+        return;
+    }
+
+    char *new_content = strdup(cont);
+
+    vec_replace(&content, index, new_content);
+
+    printf("%s\n", (char *)vec_get(&content, index));
+}
+
 
 void saveNotes() {
     FILE *file = fopen("notes.bin", "wb");

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "vector.h"
+#include "../include/vector.h"
 
 void vec_init(Vector *v) {
     v->size = 0;
