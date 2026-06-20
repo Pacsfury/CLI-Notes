@@ -5,8 +5,6 @@
 #include "../include/noteManager.h"
 
 int main(int argc , char *argv[]) {
-    initNoteManager();
-
     loadNotes();
 
     ARGS_CONTEX ctx = { argc, argv };
