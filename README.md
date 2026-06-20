@@ -1,7 +1,7 @@
 # CLI-Notes
 A fast C program to save your notes.
 
-! DONT USE THIS ! It has just been started
+_Very initial stage. You can use it, but knowing that can be incomplete_
 
 ---
 
@@ -18,6 +18,7 @@ This is a CLI tool, so it will be run in your terminal.
 
 ### How to use?
 There are different commands. Right now, there are only two, but I am adding new every time I can.
+> Important: replace `app.exe` for the compilation result
 1. `new`:
 To create a new note, use the following structure:
 
@@ -31,9 +32,14 @@ To see a note title and content, use the following structure:
 ./app.exe open --title yournotename
 ```
 
+3. `edit`:
+To edit a created note, use the following structure:
+
+```powershell
+./app.exe edit --title notetitle --cont notecontent
+```
+
 I will add soon:
-* Edit
 * List
 * And more!
 
-> Please, note that this has just been started, so it isn't pretty useful at the moment.
