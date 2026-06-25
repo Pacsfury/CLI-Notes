@@ -18,28 +18,29 @@ This is a CLI tool, so it will be run in your terminal.
 
 ### How to use?
 There are different commands. Right now, there are only two, but I am adding new every time I can.
-> Important: replace `app.exe` for the compilation result
+> Important: replace `app` for the compilation result
 1. `new`:
 To create a new note, use the following structure:
 
 ```powershell
-./app.exe new --title yournotename
+./app new --title yournotename
 ```
 2. `open`:
 To see a note title and content, use the following structure:
 
 ```powershell
-./app.exe open --title yournotename
+./app open --title yournotename
 ```
 
 3. `edit`:
 To edit a created note, use the following structure:
 
 ```powershell
-./app.exe edit --title notetitle --cont notecontent
+./app edit --title notetitle --cont notecontent
 ```
 
 I will add soon:
 * List
+* Delete
 * And more!
 
