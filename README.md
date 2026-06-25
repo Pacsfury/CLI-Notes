@@ -1,7 +1,7 @@
 # CLI-Notes
 A fast C program to save your notes.
 
-_Very initial stage. You can use it, but knowing that can be incomplete_
+_V 0.0.1. You can use it, but knowing that can be incomplete_
 
 ---
 
