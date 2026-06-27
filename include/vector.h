@@ -17,6 +17,8 @@ char *vec_get(Vector *v, int index);
 
 void vec_replace(Vector *v, int index, char *value);
 
+void vec_remove(Vector *v, int index);
+
 void vec_free(Vector *v);
 
 int vec_where(Vector *v, char *value);

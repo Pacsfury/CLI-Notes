@@ -31,6 +31,17 @@ void vec_replace(Vector *v, int index, char *value) {
     }
 }
 
+void vec_remove(Vector *v, int index) {
+    if (index < 0 || index >= v->size) {
+        return;
+    }
+    free(v->data[index]);
+    for (int i = index; i < v->size - 1; i++) {
+        v->data[i] = v->data[i + 1];
+    }
+    v->size--;
+}
+
 void vec_free(Vector *v) {
     free(v->data);
     v->data = NULL;

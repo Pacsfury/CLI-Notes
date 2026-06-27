@@ -10,6 +10,8 @@ void openNote(char title[]);
 
 void editNote(char title[], char content[]);
 
+void deleteNote(char title[]);
+
 void saveNotes();
 
 void loadNotes();

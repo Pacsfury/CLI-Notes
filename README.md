@@ -39,8 +39,14 @@ To edit a created note, use the following structure:
 ./app edit --title notetitle --cont notecontent
 ```
 
+4. `delete`:
+To delete a created note, use the following structure:
+
+```powershell
+./app delete --title yournotename
+```
+
 I will add soon:
 * List
-* Delete
 * And more!
 

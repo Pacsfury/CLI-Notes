@@ -39,6 +39,15 @@ int main(int argc , char *argv[]) {
         }
     }
     
+    if (hasArg(&ctx, "delete")) {
+        char *title = getArg(&ctx, "--title");
+        if (title != NULL) {
+            deleteNote(title);
+        } else {
+            printf("Error: Missing --title argument.\n");
+        }
+    }
+
     saveNotes();
     freeNoteManager();
     return 0;
