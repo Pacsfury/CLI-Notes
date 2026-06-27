@@ -49,6 +49,21 @@ void editNote(char title[], char cont[]) {
 }
 
 
+void deleteNote(char title[]) {
+    int index = vec_where(&titles, title);
+
+    if (index == -1) {
+        printf("Error: Note '%s' not found.\n", title);
+        return;
+    }
+
+    vec_remove(&titles, index);
+    vec_remove(&content, index);
+
+    printf("Note '%s' deleted\n", title);
+}
+
+
 void saveNotes() {
     FILE *file = fopen("notes.bin", "wb");
     if (file == NULL) {
