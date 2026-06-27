@@ -3,6 +3,7 @@
 #include <string.h>
 #include "../include/vector.h"
 #include "../include/noteManager.h"
+#include "../include/status.h"
 
 Vector titles;
 Vector content;
@@ -15,14 +16,16 @@ void initNoteManager() {
 void newNote(char title[]) {
     vec_push(&titles, strdup(title));
     vec_push(&content, strdup("")); 
-    printf("New note created\n");
+    logSuccess("New note created\n");
 }
 
 void openNote(char title[]) {
     int index = vec_where(&titles, title);
     
     if (index == -1) {
-        printf("Error: Note '%s' not found.\n", title);
+        char buffer[256];
+        sprintf(buffer, "Error: Note '%s' not found.\n", title);
+        logError(buffer);
         return;
     }
 
@@ -37,7 +40,9 @@ void editNote(char title[], char cont[]) {
     int index = vec_where(&titles, title);
     
     if (index == -1) {
-        printf("Error: Note '%s' not found.\n", title);
+        char buffer[256];
+        sprintf(buffer, "Error: Note '%s' not found.\n", title);
+        logError(buffer);
         return;
     }
 
@@ -53,21 +58,25 @@ void deleteNote(char title[]) {
     int index = vec_where(&titles, title);
 
     if (index == -1) {
-        printf("Error: Note '%s' not found.\n", title);
+        char buffer[256];
+        sprintf(buffer, "Error: Note '%s' not found.\n", title);
+        logError(buffer);
         return;
     }
 
     vec_remove(&titles, index);
     vec_remove(&content, index);
 
-    printf("Note '%s' deleted\n", title);
+    char buffer[256];
+    sprintf(buffer, "Note '%s' deleted\n", title);
+    logSuccess(buffer);
 }
 
 
 void saveNotes() {
     FILE *file = fopen("notes.bin", "wb");
     if (file == NULL) {
-        printf("Error: Could not save notes.\n");
+        logError("Error: Could not save notes.\n");
         return;
     }
 
