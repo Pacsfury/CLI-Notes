@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../include/style.h"
 #include <stdio.h>
 #include <stdbool.h>
