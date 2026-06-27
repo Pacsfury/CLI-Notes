@@ -15,7 +15,7 @@ int main(int argc , char *argv[]) {
         if (title != NULL) {
             newNote(title);
         } else {
-            printf("Error: Missing --title argument.\n");
+            logError("Error: Missing --title argument.\n");
         }
     }
     
@@ -24,7 +24,7 @@ int main(int argc , char *argv[]) {
         if (title != NULL) {
             openNote(title);
         } else {
-            printf("Error: Missing --title argument.\n");
+            logError("Error: Missing --title argument.\n");
         }
     }
     
@@ -35,7 +35,7 @@ int main(int argc , char *argv[]) {
         if (title != NULL && cont != NULL) {
             editNote(title, cont);
         } else {
-            printf("Error: Missing --title or --cont arguments.\n");
+            logError("Error: Missing --title or --cont arguments.\n");
         }
     }
     
@@ -44,7 +44,7 @@ int main(int argc , char *argv[]) {
         if (title != NULL) {
             deleteNote(title);
         } else {
-            printf("Error: Missing --title argument.\n");
+            logError("Error: Missing --title argument.\n");
         }
     }
 
