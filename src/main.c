@@ -48,6 +48,10 @@ int main(int argc , char *argv[]) {
         }
     }
 
+    if (hasArg(&ctx, "list")) {
+        listNotes();
+    }
+
     saveNotes();
     freeNoteManager();
     return 0;

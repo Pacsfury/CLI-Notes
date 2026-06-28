@@ -12,6 +12,8 @@ void editNote(char title[], char content[]);
 
 void deleteNote(char title[]);
 
+void listNotes();
+
 void saveNotes();
 
 void loadNotes();

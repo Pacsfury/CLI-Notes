@@ -72,6 +72,12 @@ void deleteNote(char title[]) {
     logSuccess(buffer);
 }
 
+void listNotes() {
+    for (int i=0;i<titles.size;i++) {
+        printf("- %s\n", vec_get(&titles, i));
+    }
+}
+
 
 void saveNotes() {
     FILE *file = fopen("notes.bin", "wb");
