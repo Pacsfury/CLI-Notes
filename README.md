@@ -23,7 +23,7 @@ To build this project from source, you will need a C compiler installed (such as
 ### Build from Source
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/CLI-Notes.git
+   git clone https://github.com/Pacsfury/CLI-Notes.git
    ```
 2. Navigate to the project directory:
    ```bash
