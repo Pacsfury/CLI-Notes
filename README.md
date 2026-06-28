@@ -66,9 +66,15 @@ Permanently deletes a note.
 cli-notes delete --title "yournotename"
 ```
 
+### List all notes
+Shows the title of all the notes.
+```bash
+cli-notes list
+```
+
 ## Roadmap
 This project is currently in early development. Upcoming features include:
-- [ ] `list` command to view all saved notes
+- [x] `list` command to view all saved notes
 - [ ] Search functionality
 - [ ] Configuration file for custom storage paths
 
