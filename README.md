@@ -2,7 +2,7 @@
 
 A fast, lightweight command-line note-taking tool written in C.
 
-![Version](https://img.shields.io/badge/version-0.0.1-yellow)
+![Version](https://img.shields.io/badge/version-0.0.2-yellow)
 ![Language](https://img.shields.io/badge/language-C-blue)
 ![Status](https://img.shields.io/badge/status-early_development-orange)
 
